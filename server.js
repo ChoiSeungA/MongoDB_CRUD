@@ -2,11 +2,10 @@ const express = require('express');
 const bodyParser= require('body-parser');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
-// const url = 'mongodb+srv://seung:ch8925@cluster0.oqhbr.mongodb.net/test?retryWrites=true&w=majority';
-// const uri = 'mongodb+srv://seung:ch8925@cluster0.oqhbr.mongodb.net/test?retryWrites=true&w=majority';
 const url = 'mongodb+srv://Seung:ch8925@cluster0.bpear.mongodb.net/test?retryWrites=true&w=majority';
 
-var port = process.env.PORT || 3000;;
+var port = process.env.PORT || 3000;
+
 // server와 browser가 연결될때까지 기다리는 것
 app.listen(port, function() {
 	console.log('listening on 3000')

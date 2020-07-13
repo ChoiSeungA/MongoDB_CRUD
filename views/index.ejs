@@ -4,45 +4,89 @@
   <meta charset="UTF-8">
   <title>Star Wars Quote App</title>
 </head>
+<style media="screen">
+  body {
+    background-color: rgba(255, 204, 241, 0.7);
+  }
+  .button-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  .add {
+    width: 28%;height: 165px;
+    float: left;
+    padding: 15px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .update {
+    width: 28%;height: 165px;
+    padding: 15px;
+    float: left;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.3)
+  }
+  .delete {
+    width: 28%;height: 165px;
+    float: left;
+    padding: 15px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.3)
+  }
+  .cont{
+    padding: 15px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.3)
+  }
+</style>
 <body>
-  <h1> May Node and Express be with you. </h1>
+  <h1> NodeJs, Express, MongoDB를 이용한 CRUD 게시판 만들기</h1>
 
-	<form action="/quotes" method="POST">
-	  <input type="text" placeholder="name" name="name">
-	  <input type="text" placeholder="quote" name="quote">
-	  <button type="submit">Submit</button>
-	</form>
+  <div class="button-wrapper">
+    <div class="add">
+      <h2>CREATE 기능</h2>
+      <form action="/quotes" method="POST">
+    	  <input type="text" placeholder="name" name="name">
+    	  <input type="text" placeholder="quote" name="quote">
+    	  <button type="submit">Submit</button>
+    	</form>
+    </div>
+    <div class="update">
+      <h2>UPDATE 기능</h2>
+      <p>
+        첫번째 quote를 Babo가 쓴 글로 변경하기
+      </p>
+      <button id="update-button">Replace SSeung's quote</button>
+    </div>
 
-  <div>
-    <h2>UPDATE 기능</h2>
-    <p>
-      첫번째 quote를 Babo가 쓴 글로 변경하기
-    </p>
-    <button id="update-button">Replace SSeung's quote</button>
+    <div class="delete">
+      <h2>Remove 기능</h2>
+      <p>
+        BabO가 쓴 글을 지우자. BabO가 쓴 글이 아무것도 없으면 밑에 변화가 생긴다!
+      </p>
+      <button id="delete-button">Delete BabO's quote</button>
+      <div id="message"></div>
+    </div>
+
+
   </div>
 
-  <div>
-    <h2>Remove BabO Vadar!</h2>
-    <p>
-      Delete one BabO's quote. Does nothing if there are no more BabO's quote
-    </p>
-    <button id="delete-button">Delete BabO's quote</button>
+
+  <div class="cont">
+    <h2> Quotes </h2>
+    <ul class="quotes">
+      <!-- Loop through quotes -->
+      <% for(var i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+          <!-- Output name from the iterated quote object -->
+          <span><%= quotes[i].name %></span>:
+          <!-- Output quote from the iterated quote object -->
+          <span><%= quotes[i].quote %></span>
+        </li>
+      <% } %>
+    </ul>
   </div>
-  <div id="message"></div>
 
-  <h2> Quotes </h2>
-
-  <ul class="quotes">
-    <!-- Loop through quotes -->
-    <% for(var i = 0; i < quotes.length; i++) {%>
-      <li class="quote">
-        <!-- Output name from the iterated quote object -->
-        <span><%= quotes[i].name %></span>:
-        <!-- Output quote from the iterated quote object -->
-        <span><%= quotes[i].quote %></span>
-      </li>
-    <% } %>
-  </ul>
 
 </body>
 
