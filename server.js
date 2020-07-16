@@ -8,7 +8,7 @@ var port = process.env.PORT || 4000;
 
 // server와 browser가 연결될때까지 기다리는 것
 app.listen(port, function() {
-	console.log('listening on 3000')
+	console.log('listening on 4000')
 });
 
 // crud handlers
