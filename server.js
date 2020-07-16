@@ -4,7 +4,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb+srv://Seung:ch8925@cluster0.bpear.mongodb.net/test?retryWrites=true&w=majority';
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 4000;
 
 // server와 browser가 연결될때까지 기다리는 것
 app.listen(port, function() {
